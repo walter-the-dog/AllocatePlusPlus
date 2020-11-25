@@ -40,6 +40,7 @@ from email.utils import parseaddr
 #email related function
 import subprocess
 #sub process is used to run shell commands and get the output without opening the shell as a gui
+import urllib.request
 '''
 file explanations
 users.csv = username,password,subject.class,role,email
@@ -56,7 +57,6 @@ Purpose:- A system designed to enrol students to subjects and also check for cla
 '''
 #Approved text in usernames , role names, subject names, class names
 approved_text = set("abcdefghijlkmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ")
-
 #row length globals
 userLEN = 5
 subjectLEN = 6
@@ -872,7 +872,7 @@ def manageClass(user):
                     FromDayCombo.set("1")
                     return False
                 tempMath = 0
-                i = 0
+                i = 1
                 #itirates and adds the days of each month to the date variable
                 while i<int(FromMonth):
                     if i in monthswith31Days:
