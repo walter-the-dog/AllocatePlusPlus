@@ -59,6 +59,7 @@ All repositories used are present in Vanilla Python 3.7.4 as of 2020
 ***
 ## Setup
 Refer to "README.docx" which can be fetched through the program itself(during initilization) or obtained through [this link](https://onedrive.live.com/download?cid=462F43BFC225E6DA&resid=462F43BFC225E6DA%213633&authkey=ABulzsu8nLZCWcE&em=2)
+[Download Python 3.7.4 here](https://www.python.org/downloads/release/python-374/)
 
 *Please notify me of any issues by opening an issue on github or direct messaging me on Discord (Walter#8833)*
 
