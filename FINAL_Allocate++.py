@@ -3830,8 +3830,6 @@ def AddUser(user):
             #the only way to verify a email is to attempt to send a email 
             
             try:
-                if connected_ssid == b"gwsc.vic.edu.au":
-                    raise TypeError
                 server = smtplib.SMTP('smtp.office365.com',587)
                 server.starttls()
                 server.login("proofofconcept69420@outlook.com","somerandompassword69420")
@@ -4044,8 +4042,7 @@ def AddUser(user):
                 givenEmail = EmailEntry.get()
         
                 try:
-                    if connected_ssid == b"gwsc.vic.edu.au":
-                        raise TypeError
+                  
                     server = smtplib.SMTP('smtp.office365.com',587)
                     server.starttls()
                     server.login("proofofconcept69420@outlook.com","somerandompassword69420")
@@ -4112,8 +4109,7 @@ def AddUser(user):
             givenEmail = EmailEntry.get()
         
             try:
-                if connected_ssid == b"gwsc.vic.edu.au":
-                    raise TypeError
+               
                 server = smtplib.SMTP('smtp.office365.com',587)
                 server.starttls()
                 server.login("proofofconcept69420@outlook.com","somerandompassword69420")
@@ -4432,8 +4428,7 @@ def DeleteUser(user):
         #sends email
         try:
             if pastEmail != "":
-                if connected_ssid == b"gwsc.vic.edu.au":
-                    raise TypeError
+               
                 server = smtplib.SMTP("smtp.office365.com",587)
                 server.starttls()
                 server.login("proofofconcept69420@outlook.com","somerandompassword69420")
@@ -6548,8 +6543,7 @@ def EditUser(user):
                     if email != "":
                         #email sent to user containing info that provides resetted password and username
                         try:
-                            if connected_ssid == b"gwsc.vic.edu.au":
-                                raise TypeError
+                         
                             server = smtplib.SMTP("smtp.office365.com",587)
                             server.starttls()
                             server.login("proofofconcept69420@outlook.com","somerandompassword69420")
@@ -6829,8 +6823,7 @@ def EditUser(user):
                     if newEmail != row[4]:
                         try:
                             #verifies email by sending a email
-                            if connected_ssid == b"gwsc.vic.edu.au":
-                                raise TypeError
+                           
                             server = smtplib.SMTP("smtp.office365.com",587)
                             server.starttls()
                             server.login("proofofconcept69420@outlook.com","somerandompassword69420")
@@ -8788,8 +8781,7 @@ def Misc(user):
                     try:
                         if givenEmail != "":
                             print(CGREEN+"Email detected"+CEND)
-                            if connected_ssid == b"gwsc.vic.edu.au":
-                                raise TypeError
+                        
                             server = smtplib.SMTP("smtp.office365.com",587)
                             server.starttls()
                             server.login("proofofconcept69420@outlook.com","somerandompassword69420")
@@ -8821,8 +8813,7 @@ def Misc(user):
                             server.quit()
                             print(CGREEN+"Sent email to new bind"+CEND)
                             if row[4]!="":
-                                if connected_ssid == b"gwsc.vic.edu.au":
-                                    raise TypeError
+                                 
                                 server = smtplib.SMTP("smtp.office365.com",587)
                                 server.starttls()
                                 server.login("proofofconcept69420@outlook.com","somerandompassword69420")
@@ -10291,17 +10282,13 @@ def firstRun(state,user):
                 os.system("start README.docx")
             except:
                 print(CRED+"Missing Tutorial Doc"+CEND)
-                if connected_ssid == b"gwsc.vic.edu.au":
+                try:
+                    urllib.request.urlretrieve("https://onedrive.live.com/download?cid=462F43BFC225E6DA&resid=462F43BFC225E6DA%213633&authkey=ABulzsu8nLZCWcE&em=2","README.docx")
+                    print(CGREEN+"Tutorial Doc fetched"+CEND)
+                    os.system("start README.docx")
+                except:
                     print(CRED+"Network Failure"+CEND)
-                    messagebox.showerror("Error","Tutorial file cannot be fetched in this network. Change access point and try again")
-                else:
-                    try:
-                        urllib.request.urlretrieve("https://onedrive.live.com/download?cid=462F43BFC225E6DA&resid=462F43BFC225E6DA%213633&authkey=ABulzsu8nLZCWcE&em=2","README.docx")
-                        print(CGREEN+"Tutorial Doc fetched"+CEND)
-                        os.system("start README.docx")
-                    except:
-                        print(CRED+"Network Failure"+CEND)
-                        messagebox.showerror("Error","Cannot access the network. Check network connectivity and try again")
+                    messagebox.showerror("Error","Cannot access the network. Check network connectivity and try again")
             
     
     firstRunScreen.deiconify()
@@ -10380,9 +10367,6 @@ loginScreen.withdraw()
 #gets the current network connection dns
 subWarnList = []
 connected_ssid = subprocess.check_output("powershell.exe (get-netconnectionProfile).Name", shell=True).strip()
-if connected_ssid == b"gwsc.vic.edu.au":
-    print(CRED+"Network Script access blocked"+CEND)
-    subWarnList.append("This network has blocked script access. Email functions have been disabled.(Please Connect to a different access point)\n")
 availableram=subprocess.check_output("powershell.exe systeminfo |find \"Available Physical Memory\"",shell=True).strip()
 availableram=availableram.decode("utf-8")
 availableram = availableram.strip("Available Physical Memory: ")
@@ -10783,8 +10767,6 @@ else:
                         if row[4] != "":
 
                             try:
-                                if connected_ssid == b"gwsc.vic.edu.au":
-                                    raise TypeError
                                 server = smtplib.SMTP('smtp.office365.com',587)
                                 server.starttls()
                                 server.login("proofofconcept69420@outlook.com","somerandompassword69420")
@@ -10890,8 +10872,6 @@ else:
                         #doesnt throw error to prevent any malactors from knowing that 2FA is disabled
                         break
                     try:
-                        if connected_ssid == b"gwsc.vic.edu.au":
-                            raise TypeError
                         server = smtplib.SMTP('smtp.office365.com',587)
                         server.starttls()
                         server.login("proofofconcept69420@outlook.com","somerandompassword69420")
